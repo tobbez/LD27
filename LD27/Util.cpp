@@ -77,14 +77,16 @@ namespace Util {
 
 	
 	int random(int minv, int maxv) {
+		static int64_t RNDMAX = RAND_MAX;
+
 		if (minv > maxv) return random(maxv, minv);
 		else if (minv == maxv) return minv;
 
-		int range = maxv - minv;
-		int randval;
+		int64_t range = (int64_t)maxv - (int64_t)minv;
+		int64_t randval;
 		do {
 			randval = rand();
-		} while (randval > RAND_MAX - ((RAND_MAX + 1) % range));
+		} while (randval > RNDMAX - ((RNDMAX + 1) % range));
 
 		return minv + (randval % range);
 	}
