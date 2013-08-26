@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IncludePath>N:\.dev-libs\SDL2_ttf-2.0.12\include;N:\.dev-libs\SDL2_image-2.0.0\include;N:\.dev-libs\SDL2-2.0.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>N:\.dev-libs\SDL2_ttf-2.0.12\lib\x86;N:\.dev-libs\SDL2_image-2.0.0\lib\x86;N:\.dev-libs\SDL2-2.0.0\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>SDL2main.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "N:\.dev-libs\SDL2-2.0.0\lib\x86\SDL2.dll" "$(OutDir)"
+copy "N:\.dev-libs\SDL2_image-2.0.0\lib\x86\*.dll" "$(OutDir)"
+copy "N:\.dev-libs\SDL2_ttf-2.0.12\lib\x86\*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
