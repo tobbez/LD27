@@ -12,6 +12,8 @@ GAME_STATE MenuState::process(SDL_Renderer *renderer)
 
 	Util::render_text(renderer, "Sansation-Regular", 32, "press space to start", Util::TEXT_ANCHOR_X::CENTER, Util::TEXT_ANCHOR_Y::BOTTOM, 5, 50, 0xff, 0xff, 0xff, _textAlpha);
 
+	Util::render_text(renderer, "Sansation-Regular", 18, "or h for help", Util::TEXT_ANCHOR_X::CENTER, Util::TEXT_ANCHOR_Y::BOTTOM, 5, 25, 0xff, 0xff, 0xff, _textAlpha);
+
 	Util::render_text(renderer, "Sansation-Regular", 16, "made by tobbez for Ludum Dare 27", Util::TEXT_ANCHOR_X::RIGHT, Util::TEXT_ANCHOR_Y::BOTTOM, 7, 5, 0xee, 0xee, 0xee, 0xe0);
 
 	_textAlpha += _textFadeDir;
